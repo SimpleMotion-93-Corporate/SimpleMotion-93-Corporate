@@ -1,0 +1,324 @@
+/* Corporate Structure Analysis - WeasyPrint Stylesheet */
+
+@page {
+    size: A4;
+    margin: 25mm 20mm 30mm 20mm;
+
+    @top-center {
+        content: "SimpleMotion Corporate Structure Analysis 2026";
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 9pt;
+        color: #666;
+    }
+
+    @bottom-left {
+        content: "CONFIDENTIAL - Internal Use Only";
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 8pt;
+        color: #999;
+    }
+
+    @bottom-center {
+        content: "Corporate-Structure-Analysis-v1.pdf";
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 8pt;
+        color: #999;
+    }
+
+    @bottom-right {
+        content: "Page " counter(page) " of " counter(pages);
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        font-size: 9pt;
+        color: #666;
+    }
+}
+
+@page :first {
+    @top-center { content: none; }
+    @bottom-left { content: none; }
+    @bottom-center { content: none; }
+    @bottom-right { content: none; }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Cover Page */
+.cover-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    page-break-after: always;
+    padding: 40mm 0;
+}
+
+.cover-header {
+    text-align: center;
+}
+
+.cover-logo {
+    font-size: 14pt;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #666;
+    margin-bottom: 60mm;
+}
+
+.cover-content {
+    text-align: center;
+}
+
+.cover-title {
+    font-size: 28pt;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10mm;
+    line-height: 1.2;
+}
+
+.cover-subtitle {
+    font-size: 14pt;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 20mm;
+}
+
+.cover-date {
+    font-size: 12pt;
+    color: #999;
+}
+
+.cover-footer {
+    text-align: center;
+}
+
+.cover-classification {
+    font-size: 10pt;
+    font-weight: 600;
+    color: #c00;
+    letter-spacing: 2px;
+}
+
+/* Headings */
+h1 {
+    font-size: 20pt;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: 15mm;
+    margin-bottom: 8mm;
+    padding-bottom: 3mm;
+    border-bottom: 2px solid #333;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10mm;
+    margin-bottom: 5mm;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #444;
+    margin-top: 8mm;
+    margin-bottom: 4mm;
+    page-break-after: avoid;
+}
+
+h4 {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #555;
+    margin-top: 6mm;
+    margin-bottom: 3mm;
+    page-break-after: avoid;
+}
+
+/* Paragraphs */
+p {
+    margin-bottom: 4mm;
+    text-align: justify;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 4mm;
+    padding-left: 8mm;
+}
+
+li {
+    margin-bottom: 2mm;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 5mm 0;
+    font-size: 9pt;
+    page-break-inside: avoid;
+}
+
+th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    text-align: left;
+    padding: 3mm;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 3mm;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Code blocks / diagrams */
+pre {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 2mm;
+    padding: 4mm;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 8pt;
+    line-height: 1.4;
+    overflow-x: auto;
+    page-break-inside: avoid;
+    white-space: pre;
+}
+
+code {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 9pt;
+    background-color: #f5f5f5;
+    padding: 0.5mm 1.5mm;
+    border-radius: 1mm;
+}
+
+/* Horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 8mm 0;
+}
+
+/* Executive Summary box */
+.executive-summary {
+    background-color: #f0f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 5mm;
+    margin: 5mm 0;
+}
+
+/* Recommendation boxes */
+.recommendation {
+    background-color: #f0fff0;
+    border-left: 4px solid #228b22;
+    padding: 4mm;
+    margin: 4mm 0;
+}
+
+.not-recommended {
+    background-color: #fff5f5;
+    border-left: 4px solid #cc0000;
+    padding: 4mm;
+    margin: 4mm 0;
+}
+
+/* Strong emphasis */
+strong {
+    font-weight: 600;
+}
+
+/* Section breaks */
+.section-break {
+    page-break-before: always;
+}
+
+/* Checklist */
+.checklist {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    padding-left: 6mm;
+    position: relative;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+}
+
+/* Appendix styling */
+.appendix {
+    page-break-before: always;
+}
+
+.appendix h1 {
+    font-size: 16pt;
+}
+
+/* Table of Contents */
+.toc {
+    page-break-after: always;
+}
+
+.toc h1 {
+    border-bottom: none;
+    text-align: center;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.toc li {
+    margin-bottom: 3mm;
+    padding-bottom: 2mm;
+    border-bottom: 1px dotted #ccc;
+}
+
+.toc a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Document control table */
+.document-control {
+    margin-top: 10mm;
+}
+
+.document-control table {
+    font-size: 9pt;
+}
+
+/* Disclaimer */
+.disclaimer {
+    font-style: italic;
+    font-size: 9pt;
+    color: #666;
+    margin-top: 10mm;
+    padding-top: 5mm;
+    border-top: 1px solid #ddd;
+}
